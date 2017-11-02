@@ -10,6 +10,8 @@ namespace MultipleShops.WebApp.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using MultipleShops.Domain.Abstract;
+    using MultipleShops.Domain.Concrete;
 
     public static class NinjectWebCommon 
     {
@@ -53,8 +55,9 @@ namespace MultipleShops.WebApp.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            
             System.Web.Mvc.DependencyResolver.SetResolver(new
-                MultipleShops.WebApp.Infrastructure.NinjectDependencyResolver(kernel));
+               MultipleShops.WebApp.Infrastructure.NinjectDependencyResolver(kernel));
         }        
     }
 }

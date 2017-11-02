@@ -1,0 +1,15 @@
+﻿@using MultipleShops.Domain.Entities
+@model IEnumerable<Shop>
+@{
+    ViewBag.Title = "Shops";
+}
+
+@foreach(var p in Model)
+{
+    <div>
+        <h3>@p.Name</h3>
+        @p.Address
+        <h4>@p.ShoppingHours</h4>
+    </div>
+}
+

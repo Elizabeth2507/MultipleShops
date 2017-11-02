@@ -8,7 +8,7 @@ using MultipleShops.Domain.Abstract;
 
 namespace MultipleShops.Domain.Concrete
 {
-    public class UnifOfWork
+    public class UnitOfWork: IUnitOfWork
     {
         private EFDbContext dbContext = new EFDbContext();
 

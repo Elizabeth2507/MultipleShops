@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ninject;
+using Moq;
+using MultipleShops.Domain.Abstract;
+using MultipleShops.Domain.Entities;
+using MultipleShops.Domain.Concrete;
 
 namespace MultipleShops.WebApp.Infrastructure
 {
@@ -25,13 +29,15 @@ namespace MultipleShops.WebApp.Infrastructure
         }
         private void AddBindings()
         {
-            /*Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
-            mock.Setup(m => m.Products).Returns(new List<Product>
+            kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            /*Mock<IRepository<Shop>> mock = new Mock<IRepository<Shop>>();
+            mock.Setup(m => m.DataAll).Returns(new List<Shop>
             {
-                new Product { Name = "Football", Price = 25 },
-                new Product { Name = "Surf board", Price =179 },
-                new Product { Name = "Running shoes", Price =95 }
+                new Shop { Name = "Pumpkin", Address = "14 Gikalo str", ShoppingHours = "Mon, Th, Fr" },
+                new Shop { Name = "Vitadini", Address = "65 Korolev str", ShoppingHours = "Fr" },
+                new Shop { Name = "Nine West", Address = "1 Plehanov str", ShoppingHours = "Mon, Wen" },
             });*/
+            //kernel.Bind(typeof(IRepository<>)).ToConstant(mock.Object);
             //kernel.Bind<IProductsRepository>().To<EFProductRepository>();
         }
     }
