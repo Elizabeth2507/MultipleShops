@@ -12,6 +12,11 @@ namespace MultipleShops.WebApp
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: "Product",
+                url: "{Product}/{action}/{id}",
+                defaults: new { controller = "Product", action = "Index", id = "" }
+            );
 
             routes.MapRoute(
                 name: "Default",

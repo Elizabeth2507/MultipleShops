@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MultipleShops.Domain.Entities.Product>
+<style>
+    #productTable td {
+        vertical-align: middle;
+    }
+</style>
+<script src="~/Scripts/load_more.js"></script>
+
+
+@foreach (var item in Model)
+{
+    <tr id="result">
+        <td id="result" class="text-left">@item.Name</td>
+        <td id ="result" class="text-left">@item.Description</td>
+    </tr>
+}
+
+
+
+
+
+
+
+
+

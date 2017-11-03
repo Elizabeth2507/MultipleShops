@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Products";
+}
+
+
+<h2>Products</h2>
+<table id="result" class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+            @Html.Action("LoadProduct")
+            
+    </tbody>
+    
+    
+</table>
+

@@ -3,13 +3,33 @@
 @{
     ViewBag.Title = "Shops";
 }
+<style>
+    #shopTable td { vertical-align: middle; }
+</style>
 
-@foreach(var p in Model)
-{
-    <div>
-        <h3>@p.Name</h3>
-        @p.Address
-        <h4>@p.ShoppingHours</h4>
-    </div>
-}
-
+<h2>Shops</h2>
+<table id="shopTable" class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th class="text-right">Shopping Hours</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td class="text-left">@p.Name</td>
+                <td class="text-left">@p.Address</td>
+                <td class="text-right">@p.ShoppingHours</td>
+                <td>
+                    <div class="text-center">
+                        <a class="btn btn-primary" href="@Url.Action("Index","Product", new { id = p.ShopID })">Products</a>
+                    </div>
+                </td>
+            </tr>
+        }
+            
+</tbody>
+</table>
